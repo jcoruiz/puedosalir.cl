@@ -1,15 +1,36 @@
-import React from "react";
-import logo from "./logo.svg";
+import React, { useState } from "react";
 import "./App.css";
-
-import ReactGA from "react-ga";
-ReactGA.initialize(process.env.REACT_APP_GA_ID || "");
-ReactGA.pageview(window.location.pathname + window.location.search);
+import { Collapse, Button, CardBody, Card } from "reactstrap";
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
+
   return (
     <div className="App">
-      <content className="App-header">No.</content>
+      <content className="App-content">
+        <span className="textNo">No.</span>
+
+        <Collapse isOpen={isOpen}>
+          <Card>
+            <CardBody>
+              Puedo salir entrega recomendaciones personalizadas de acuerdo a tu
+              ubicación geográfica frente al coronavirus. <br></br>Recuerda
+              siempre #lavarteLasManos
+            </CardBody>
+          </Card>
+        </Collapse>
+        <div className="footer">
+          <Button
+            color="secondary"
+            onClick={toggle}
+            style={{ marginBottom: "1rem" }}
+          >
+            ¿Cómo funciona?
+          </Button>
+        </div>
+      </content>
     </div>
   );
 }
