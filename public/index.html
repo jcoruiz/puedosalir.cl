@@ -20,6 +20,25 @@
       rel="stylesheet"
     />
 
+    <!-- Start Roier Pixel Snippet -->
+    <script>
+      !(function (e, t, i, r, a, n, o) {
+        e[r] ||
+          (((a = e[r] = function () {
+            a.process ? a.process.apply(a, arguments) : a.queue.push(arguments);
+          }).queue = []),
+          (a.t = +new Date()),
+          ((n = t.createElement(i)).async = 1),
+          (n.src =
+            "https://s3.amazonaws.com/pixel-script.roier.ai/track.js?t=" +
+            864e5 * Math.ceil(new Date() / 864e5)),
+          (o = t.getElementsByTagName(i)[0]).parentNode.insertBefore(n, o));
+      })(window, document, "script", "roierpix"),
+        roierpix("init", "RP-3GC7N858Q"),
+        roierpix("event", "pageload");
+    </script>
+    <!-- End Roier Pixel Snippet -->
+
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
